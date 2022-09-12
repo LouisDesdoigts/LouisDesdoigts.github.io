@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Differentiable Optics Seminar: Louis Desdoigts</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<!-- <link rel="stylesheet" href="dist/theme/black.css"> -->
+		<link rel="stylesheet" href="dist/theme/night.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<!-- Top Level Sections -->
+				<!-- Slide-set 1 -->
+				<!-- Intro -->
+				<section data-background="/images/jwst_mirror_0.jpg" data-background-opacity=0.5>
+					<section>
+						<h2><i>Differentiable Optics</i></h2>
+						<h3>Inference & Design</h3>
+
+						Louis Desdoigts 
+						<br>
+						The University of Sydney
+					</section>
+					<section>
+						Slides availale <a href="www.example.com">here</a>
+						<br>
+						Code and examples available on my <a href="https://github.com/LouisDesdoigts/dLux">Github</a> 
+					</section>
+					<section>
+						Work in collaboration with: 
+						<br>
+						<a href="https://github.com/benjaminpope">Benjamin Pope (UQ) </a>
+						<br>
+						<a href="https://github.com/ptuthill">Peter Tuthill (USyd) </a>
+					</section>
+				</section>
+
+				<!-- Slide-set 2 -->
+				<!-- Background & Problems -->
+				<section data-background="/images/jwst_mirror_1.jpg" data-background-opacity=0.5>
+					<section>
+						<h2>Inference & Design Problems in Optics</h2>
+						JWST, Toliman, & Beyond!
+					</section>
+					<section>
+						<h3>JWST</h3>
+						<p>Phase Retireval</p>
+						<p>Pixel-Level Calibration</p>
+						<p>AMI Mask Inference</p>
+						<p>Coronagraphic Inference</p>
+					</section>
+					<section>
+						<h3>Toliman</h3>
+						<p>Phase Retireval</p>
+						<p>Heriarchical Instrumental Models</p>
+						<p>Image Deconvolution</p>
+					</section>
+					<section>
+						<h3>Beyond!</h3>
+						<p>Low WFE resistance coronagraph design</p>
+						<p>Polarisation resistant coatings</p>
+						<p>Something something fibers</p>
+						<p>Crowded-field signal decontamination</p>
+					</section>
+				</section>
+
+				<!-- Slide-set 3 -->
+				<!-- Autodiff & Optics -->
+				<section data-background="/images/jwst_mirror_2.jpg" data-background-opacity=0.5>
+					<section>
+						<h2>Automatic Differentiation & Optics</h2>
+						Unifying Machine Learning and Optics
+					</section>
+<!-- 					<section data-auto-animate>
+					  	<h3>Isomorphism</h3>
+						<p>What does a neural-network <i>DO?</i></p>
+					</section> -->
+					<section data-auto-animate>
+					  	<h3>Isomorphism</h3>
+						<p>What does a neural-network <i>DO?</i></p>
+						<img src="images/NN_raw.png" width="700">
+					</section>
+<!-- 					<section data-auto-animate>
+					  	<h3>Isomorphism</h3>
+						<p>What does an optical system <i>DO?</i></p>
+					</section> -->
+					<section data-auto-animate>
+					  	<h3>Isomorphism</h3>
+						<p>What does an optical system <i>DO?</i></p>
+						<img src="images/coronagraph_raw.png" width="900">
+					</section>
+					<section>
+						Optical Neural Networks
+					</section>
+					<section>
+						Neural Network Optics?
+						<br>
+						Optical systems can be perfectly represented by neural networks, ie fully differentiable optical forwards models.
+						<br>
+						This is NO different to any other optical forwards model, just constructed in a differentiable programatic framework
+					</section>
+					<section>
+						Autodiff
+						<br>
+						dimensionality
+						<br>
+						differentiablilty
+					</section>
+				</section>
+
+				<!-- Slide-set 4 -->
+				<section data-background="/images/jupiter_0.png" data-background-opacity=0.5>
+					<section>
+						<h2>∂Lux</h2>
+						Maybe put later??
+					</section>
+				</section>
+
+				<!-- Slide-set 5 -->
+				<section data-background="/images/space_0.jpg" data-background-opacity=0.5>
+					<section>
+						<h2>Problem 1</h2>
+					</section>
+				</section>
+
+				<!-- etc -->
+
+
+
+				<!-- etc -->
+
+				<section data-background="/images/space_1.jpg" data-background-opacity=0.5>
+					<section>
+						<h2>Future Work</h2>
+					</section>
+					<section>
+						<h2>Geometric Optics</h2>
+					</section>
+					<section>
+						Free-space Propagator (Near field Fresnel)
+					</section>
+					<section>
+						Finite Element solver
+					</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
