@@ -50,30 +50,31 @@
 				<section data-background="/images/jwst_mirror_1.jpg" data-background-opacity=0.5>
 					<section>
 						<h2>Inference & Design Problems in Optics</h2>
-						Hubble, JWST, Toliman, & Beyond!
+						<!-- Hubble, JWST, Toliman, & Beyond! -->
+						JWST, Toliman, & Beyond!
 					</section>
-					<section>
+<!-- 					<section>
 						<p>Phase Retireval</p>
 						<img src="/images/hubble_costar.jpg" width=750>
 					</section>
 					<section>
 						<p>Phase Retireval</p>
 						<img src="/images/hst_fix.jpeg" width="900">
-					</section>
+					</section> -->
 					<section>
 						<!-- <h3>JWST</h3> -->
 						<p>Phase Retireval</p>
 						<img src="/images/jwst_phase.png" width="900">
 					</section>
-					<section>
-						<!-- <h3>JWST</h3> -->
+					<!-- <section>
 						<p>Interferometric Mask Inference</p>
 						<img src="/images/AMI_mask.jpg" width="450">
 						<img src="/images/AMI_psf.png" width="450">
-					</section>
+					</section> -->
 					<section>
 						<!-- <h3>JWST</h3> -->
-						<p>Pixel-Level Calibration</p>
+						<!-- <p>Pixel-Level Calibration</p> -->
+						<p>Instrumental Calibration</p>
 						<img src="/images/jwst_transit.png" width="800">
 					</section>
 					<section>
@@ -88,10 +89,11 @@
 					</section>
 					<section>
 						<h3>Beyond!</h3>
-						<p>Low WFE resistant coronagraph design</p>
-						<p>Polarisation resistant coatings</p>
+						<p>Low-order wavefront error resistant coronagraphs</p>
+						<p>Polarisation invariant coatings</p>
 						<p>Non-common path error correction in AO</p>
 						<p>Crowded-field signal decontamination</p>
+						<p>*Your science goes here!*</p>
 					</section>
 				</section>
 
@@ -102,24 +104,16 @@
 						<h2>Automatic Differentiation & Optics</h2>
 						Unifying Machine Learning and Optics
 					</section>
-<!-- 					<section data-auto-animate>
-					  	<h3>Isomorphism</h3>
-						<p>What does a neural-network <i>DO?</i></p>
-					</section> -->
 					<section data-auto-animate>
 					  	<h3>Isomorphism</h3>
 						<p>What does a Neural Network <i>DO?</i></p>
 						<img src="/images/NN_raw.png" width="700">
 					</section>
-<!-- 					<section data-auto-animate>
-					  	<h3>Isomorphism</h3>
-						<p>What does an optical system <i>DO?</i></p>
-					</section> -->
 					<section data-auto-animate>
 					  	<h3>Isomorphism</h3>
 					  	<br>
 						<p>What does an Optical System <i>DO?</i></p>
-						<img src="/images/coronagraph.png" width="1100">
+						<img src="/images/coronagraph.png" width="1100", style="background-color:white;" >
 					</section>
 					<section data-auto-animate>
 						<p>Neural Network and Optical Systems are structurally <i>isomorphic</i></p>
@@ -128,19 +122,24 @@
 					</section>
 					<section data-auto-animate>
 						<h3>Automatic Differentiation</h3>
-
-						<p>Autodiff is repeated applications of the chain rule to code in order to calcualte derivates</p>
-						
-						<p>It is not finite differencing, nor is it symbolic differentiation</p>
+						<p>What is Autodiff?</p>
+						<ul>
+							<li>It is NOT finite differencing</li>
+							<li>It is NOT symbolic differentiation</li>
+							<li>It IS repeated applications of the chain rule to code in order to calcualte derivates</li>
+						</ul>
 					</section>
 					<section data-auto-animate>
 						<h3>Automatic Differentiation</h3>
-						<p>Computational cost of derivative calcualtions do not scale with the number of parameters</p>
-						<p>Through the use of autodiff, we can cast aside the curse of dimensionality and access a host of better optimsation and inference algorithms!</p>
+						<p>Why is autodiff usefull?</p>
+						<ul>
+							<li>Computational cost of derivative calcualtions do Not scale with the number of parameters</li>
+							<li>Complex, high-dimensional models can optimised simply</li>
+							<li>Parameter gradients let us access a host of better optimsation and inference algorithms!</li>
+						</ul>
 					</section>
 				</section>
 
-				<!-- dLux -->
 				<section data-background="/images/jupiter_0.png" data-background-opacity=0.5>
 					<section>
 						<img src="/images/logo.jpg">
@@ -174,11 +173,15 @@
 						<p><a href="https://louisdesdoigts.github.io/dLux/notebooks/designing_a_mask/">Tutorial</a></p>
 					</section>
 					<section>
-						<p>How do you design a binary mask to maximise registration of binary star separation?</p>
-						<ul>
+						<!-- <p>How do you design a binary mask to maximise registration of binary star separation?</p> -->
+						<p>How can you design a binary mask using gradients?</p>
+						<br>
+<!-- 						<ul>
 							<li>Positional regitration is proportional to gradient energy</li>
 							<li>Maximise instantaneous grab on state of telescope</li>
-						</ul>
+						</ul> -->
+						<p>Continuous Latent Image Mask Binarisation</p>
+						<p>(CLIMB)</p>
 					</section>
 					<section data-auto-animate>
 						<h2>CLIMB</h2>
@@ -189,20 +192,48 @@
 						<video controls src="/images/climb_walk.mp4"></video>
 					</section>
 					<section>
-						<p>Maximise PSF Gradients</p>
+						<p>How do you design a mask to best constrain binary-star separation AND the instantaneous state of the telescope?</p>
+						<br>
+						<p>Engineer a loss function!</p>
+
+						\[
+						\text{Loss}(\psi, p) = - \sum_{(x, y)} \Big(\nabla \psi(x, y) (\alpha + \beta\vec{r})\Big)^p 
+						\]
+
+					</section>
+					<section>
+						<!-- <p>Maximise PSF Gradients</p> -->
 						<video controls src="/images/GE_optimisation.mp4"></video>
 					</section>
 				</section>
 
 				<section data-background="/images/space_2.jpg" data-background-opacity=0.5>
 					<section>
-						<h2>Optical Analysis</h2>
+						<!-- <h2>Optical Analysis</h2> -->
+						<h2>Optical Design</h2>
 						<p><a href="https://louisdesdoigts.github.io/dLux/notebooks/fisher_information/">Tutorial</a></p>
-						<p><a href="https://github.com/LouisDesdoigts/dLux/blob/main/dLux/dev/dLux_HMC.ipynb">Demonstration</a></p>
 					</section>
 					<section>
-						<p>How do we compare idealised performace of multiple systems?</p>
-						<p>Fisher forecasting under the  Laplace approximation</p>
+						<p>How do we compare performace of multiple systems?</p>
+						<p>Cramer-Rao lower-bound calcualtion under the  Laplace approximation</p>
+
+						\[
+						\text{CRLB}(\vec{X}) \propto \frac{1}{\vec{\Sigma}(\vec{X})}
+						\]
+						<!-- \[
+						\text{CRLB}(\vec{X}) \propto \frac{1}{- \Big[ \nabla \nabla \text{ln} \Big(  
+					            \mathcal {L}(\vec{X}) \rho(\vec{X})
+					    \Big) \Big]^{-1}}
+						\] -->
+
+						where
+
+						\[
+					    \vec{\Sigma}(\vec{X}) = - \Big[ \nabla \nabla \text{ln} \Big(  
+					            \mathcal {L}(\vec{X}) \rho(\vec{X})
+					    \Big) \Big]^{-1}
+					    \]
+
 					</section>
 					<section>
 						<img src="/images/fim_masks.png", width=600>
@@ -212,19 +243,32 @@
 						<img src="/images/FIM_posterior.png", width=650>
 					</section>
 					<section>
-						<p>Fisher matrix optimisation?</p>
+						<!-- <p>Fisher matrix optimisation?</p> -->
+						<!-- <p>Covariance matrix optimisation?</p> -->
+						<p>Going further...</p>
+						<p>What ig we optimised the entropy of the covariance matrix?</p>
+
 					</section>
 					<section>
-						<p><img src="/images/fim_post.png" width=1200>
+						
 						<img src="/images/fim_opt.png" width=450>
-						</p>
+						<img src="/images/fim_post.png" width=1200>
+					</section>
+				</section>
+				<section data-background="/images/space_2.jpg" data-background-opacity=0.5>
+					<section>
+					<h2>Data Analysis</h2>
+					<p><a href="https://github.com/LouisDesdoigts/dLux/blob/main/dLux/dev/dLux_HMC.ipynb">Demonstration</a></p>
 					</section>
 					<section>
-						<p>How to understand relationship between parameters from real data?</p>
+						<p>How do understand relationship between a large number of interrelated parameters from real data?</p>
 					</section>
 					<section>
-						<h2>HMC!</h2>
-						<img src="/images/prob_model.png", width=800>
+						<!-- <h2>HMC!</h2> -->
+						<p>Hamiltonian Monte Carlo (HMC)</p>
+						<!-- <img src="/images/prob_model.png", width=800> -->
+						<img src="/images/npy.png", width=800>
+						<!-- <img src="/images/npy_bg.png", width=800> -->
 						<img src="/images/hmc_data.png", width=400>
 					</section>
 					<section>
@@ -241,19 +285,27 @@
 					<section>
 						Data
 						<img src="/images/data.png">
-						Model Resdiuals
+						Initial Resdiuals
 						<img src="/images/residuals.png">
 					</section>
 					<section>
-						Astrophysical Parameter recovery
+						<p>Run gradient descent on:</p>
+						<ul>
+							<li>Stellar positions & fluxes (45 parameters)</li>
+							<li>Optical aberrations (11 parameters)</li>
+							<li>Interpixel sensitivites (65'536 parameters)</li>
+						</ul>
+					</section>
+					<section>
+						<p>Astrophysical parameter recovery</p>
 						<video controls src="/images/params_residuals.mp4"></video>
 					</section>
 					<section>
-						Optical Aberration recovery
+						<p>Optical aberration recovery</p>
 						<video controls src="/images/optical_aberrations.mp4"></video>
 					</section>
 					<section>
-						Inter-pixel Sensitivity recovery
+						<p>Inter-pixel sensitivity recovery</p>
 						<video controls src="/images/FF_recovery.mp4"></video>
 					</section>
 				</section>
@@ -266,16 +318,20 @@
 						<h2>Future Work</h2>
 					</section>
 					<section>
-						<h2>Geometric Optics</h2>
+						<p>Bulk optic design with ray tracing</p>
+						<p>Holographic phase mask design</p>
+						<p><a href="https://nqp.stanford.edu/inverse-design-photonics">Inverse design of Photonics</a></p>
+						<p>Non-common path error correction using physical forwards models</p>
+						<p>Your optical problems!</p>
 					</section>
 					<section>
-						Free-space Propagator (Near field Fresnel)
+						Have a play with the code!
+						<a href="https://github.com/LouisDesdoigts/dLux">github.com/LouisDesdoigts/dLux</a>
 					</section>
 					<section>
-						Finite Element solver
+						Questions?
 					</section>
 				</section>
-
 			</div>
 		</div>
 
